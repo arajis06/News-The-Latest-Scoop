@@ -1,21 +1,19 @@
-var express = require("express");
-var exphbs = require("express-handlebars");
-var logger = require("morgan");
-var mongoose = require("mongoose");
+const express = require("express");
+const exphbs = require("express-handlebars");
+const logger = require("morgan");
+const mongoose = require("mongoose");
 
-// Our scraping tools
-// Axios is a promised-based http library, similar to jQuery's Ajax method
-// It works on the client and on the server
-var axios = require("axios");
-var cheerio = require("cheerio");
+// Scraping tools
+const axios = require("axios");
+const cheerio = require("cheerio");
 
 // Require all models
-var db = require("./models");
+const db = require("./models");
 
 // Initialize Express
-var app = express();
+const app = express();
 
-var PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 // Configure middleware
 
@@ -33,11 +31,11 @@ app.set("view engine", "handlebars");
 // mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
 
 //If deployed, use the deployed databasw use the local mongoHeadlines database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/MongoHeadlines";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/MongoHeadlines";
 //Connect to Mongo DB
 mongoose.connect(MONGODB_URI);
 
-// Routes
+// Routes (move and update routes to route folder)
 
 // A GET route for scraping the E!News website
 app.get("/scrape", function (req, res) {
