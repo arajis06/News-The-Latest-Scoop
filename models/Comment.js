@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Using the Schema constructor, creates a new Note Schema object
-const NoteSchema = new Schema({
+const CommentSchema = new Schema({
   // `title` is of type String
   title: {
     type: String,
@@ -17,7 +17,7 @@ const NoteSchema = new Schema({
   },
   article: {
     type:Schema.Types.ObjectId,
-    ref: "Articles"
+    ref: "Article"
   },
   createdAt: {
     type: Date,
@@ -26,7 +26,7 @@ const NoteSchema = new Schema({
 });
 
 // This creates our model from the above schema, using mongoose's model method
-const Note = mongoose.model("Note", NoteSchema);
+const Comment = mongoose.model("Comment", CommentSchema);
 
 // Export the Note model
-module.exports = Note;
+module.exports = Comment;

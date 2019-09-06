@@ -10,12 +10,17 @@ const ArticleSchema = new Schema({
         type: String,
         required: true
     },
-    // Title of Article
-    image: {
-        type: String,
-        required: false,
-        default: null
-    },
+    // // img of Article
+    // image: {
+    //     type: String,
+    //     required: false,
+    //     default: null
+    // },
+    // // Summary to Article
+    // summary: {
+    //     type: String,
+    //     required: true
+    // },
     // Link to Article
     link: {
         type: String,
@@ -42,9 +47,9 @@ const ArticleSchema = new Schema({
     // `note` is an object that stores a Note id
     // The ref property links the ObjectId to the Note model
     // This allows us to populate the Article with an associated Note
-    note: {
+    comment: {
         type: Schema.Types.ObjectId,
-        ref: "Note",
+        ref: "Comment",
         required: false
     }
 });
