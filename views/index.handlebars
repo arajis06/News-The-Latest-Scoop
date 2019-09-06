@@ -34,21 +34,18 @@
                         {{!-- Add Comment BTN --}}
                         {{!-- <a class="btn btn-warning comment-btn" href="/comment/{{this._id}}">Add Comment</a> --}}
                         <a class="btn btn-warning comment-btn" href="#" data-toggle="modal" data-target="#{{this._id}}">Add
-                            Comment</a>
+                        Comment</a>
+
                         {{!-- Save Article BTN --}}
                         <form action="/api/articles/save/{{this._id}}" method="POST">
                             <button type="submit" class="btn btn-success save-btn">Save Article</button>
                         </form>
                     </div>
                 </div>
+                {{/each}}
+            {{/if}}
         </div>
     </div>
 {{>modal}}
 </div>
 
-                {{/each}}
-            {{else}}
-                <div class="null">
-                    <h4>There are no saved articles.</h4>
-                </div>
-            {{/if}}
